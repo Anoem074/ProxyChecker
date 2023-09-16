@@ -2,13 +2,13 @@ import requests
 import time
 from colorama import Fore, Style, init
 
-# Initialize Colorama
+
 init(autoreset=True)
 
 
 test_url = 'https://www.example.com'
 
-# Functie om proxies te testen
+
 def test_proxies(proxy_list, test_url):
     working_proxies = []
     bad_proxies = []
@@ -72,10 +72,10 @@ def test_proxies(proxy_list, test_url):
     else:
         print(Fore.RED + "No changes have been made to proxies.txt." + Style.RESET_ALL)
 
-# Aangepaste input functie om kleuren correct weer te geven
+# 
 def custom_input(prompt):
     try:
-        # Kleur tijdelijk uitschakelen
+        
         Fore._style_stack = []
         return input(prompt)
     finally:
@@ -113,14 +113,14 @@ def remove_proxy(proxy_list):
     else:
         print(Fore.RED + "Proxy not found in the list." + Style.RESET_ALL)
 
-# Optie om de proxylijst te schonen
+
 def clean_proxy_list(proxy_list):
     proxy_list = [proxy.strip() for proxy in proxy_list if proxy.strip()]
     with open('proxies.txt', 'w') as file:
         file.writelines(proxy_list)
     print(Fore.GREEN + "Proxy list cleaned successfully." + Style.RESET_ALL)
 
-# Optie om de proxylijst te resetten
+
 def reset_proxy_list():
     confirmation = input("Are you sure you want to reset the proxy list? This will remove all proxies. (y/n): ").strip().lower()
     if confirmation == 'y':
@@ -130,7 +130,7 @@ def reset_proxy_list():
     else:
         print(Fore.RED + "Proxy list reset cancelled." + Style.RESET_ALL)
 
-# Functie om het gekleurde menu af te drukken
+
 def print_colored_menu():
     print(Fore.CYAN + r"""
 
