@@ -1,0 +1,9 @@
+@echo off
+echo Installeren van vereiste bibliotheken...
+pip install -r requirements.txt
+
+echo launching...
+python main.py
+
+echopress key to continue...
+pause >nul
